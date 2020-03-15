@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, GuidelineActivity::class.java))
     }
 
+    fun openBarrierActivity(view: View) {
+        startActivity(Intent(this, BarrierActivity::class.java))
+    }
+
     fun exit(view: View) {
         finish()
     }
