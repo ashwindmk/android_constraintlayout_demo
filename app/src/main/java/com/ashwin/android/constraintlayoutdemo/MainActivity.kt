@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, BarrierActivity::class.java))
     }
 
+    fun openDynamicActivity(view: View) {
+        startActivity(Intent(this, DynamicActivity::class.java))
+    }
+
     fun exit(view: View) {
         finish()
     }
