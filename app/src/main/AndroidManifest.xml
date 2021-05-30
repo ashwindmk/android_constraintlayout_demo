@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ConstraintLayoutDemo">
         <activity android:name=".DynamicActivity"
-            android:theme="@style/Theme.FullScreen"></activity>
+            android:theme="@style/FullScreen"></activity>
         <activity android:name=".BarrierActivity" />
         <activity android:name=".GuidelineActivity" />
         <activity android:name=".MainActivity">

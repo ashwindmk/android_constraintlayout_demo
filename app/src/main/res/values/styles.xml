@@ -22,7 +22,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Theme.FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -37,8 +37,15 @@
 <!--        <item name="android:windowTranslucentNavigation">true</item>-->
 
         <!-- Customize your theme here. -->
-        <item name="android:windowIsTranslucent">false</item>
+<!--        <item name="android:windowIsTranslucent">true</item>-->
+<!--        <item name="android:windowFullscreen">true</item>-->
+
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
+<!--        <item name="android:windowBackground">@android:color/transparent</item>-->
+<!--        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>-->
 <!--        <item name="android:windowBackground">@android:color/darker_gray</item>-->
-        <item name="android:windowTranslucentNavigation">true</item>
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
     </style>
 </resources>

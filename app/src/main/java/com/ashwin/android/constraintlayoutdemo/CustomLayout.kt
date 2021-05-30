@@ -1,43 +1,31 @@
 package com.ashwin.android.constraintlayoutdemo
 
 import android.content.Context
-import android.content.res.ColorStateList
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.util.AttributeSet
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
+import android.view.WindowInsets
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_dynamic.*
+import androidx.constraintlayout.widget.Guideline
+import androidx.core.view.marginTop
 
-fun Int.resolvedColor(context: Context): Int = ContextCompat.getColor(context, this)
+class CustomLayout(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
+    val topGuideline: Guideline
 
-class DynamicActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dynamic)
+    init {
+        val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        inflater.inflate(R.layout.layout_custom, this, true)
 
-        //inflate()
-        addFragment()
-    }
+        topGuideline = findViewById(R.id.topGuideline)
 
-    fun addFragment() {
-        supportFragmentManager.beginTransaction()
-            .replace(
-                R.id.fragmentContainer,
-                DynamicFragment.newInstance(
-                    //intent.getParcelableExtra(EXTRA_CALL_INFO),
-                    //intent.getStringExtra(EXTRA_AOSP_UNIQUE_CALL_ID)
-                ), "dyn-frag")
-            .commit()
+        inflate()
     }
 
     fun inflate() {
-        //id = View.generateViewId()
+        id = View.generateViewId()
 
         val oneView = findViewById<TextView>(R.id.one_textview)
         val twoView = findViewById<TextView>(R.id.two_textview)
@@ -55,9 +43,9 @@ class DynamicActivity : AppCompatActivity() {
 
         val viewIds = arrayOf(threeView.id, oneView.id, twoView.id)
 
-        val root = findViewById<ConstraintLayout>(R.id.root_layout)
+        //val root = findViewById<ConstraintLayout>(R.id.root_layout)
 
-        alignElementsTop(root, viewIds)
+        alignElementsTop(this, viewIds)
     }
 
     fun alignElementsTop(constraintLayout: ConstraintLayout, viewIds: Array<Int>) {
@@ -76,10 +64,22 @@ class DynamicActivity : AppCompatActivity() {
 //        }
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            showFullScreen()
+    override fun onApplyWindowInsets(insets: WindowInsets?): WindowInsets {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+            Log.d("constraint-debug", "onApplyWindowInsets: insets: ${rootWindowInsets?.displayCutout}")
+//            Log.d("constraint-debug", "topguideline: current top: ${topGuideline.gett}")
+//            topGuideline.setGuidelineBegin()
+            //topGuideline.setGuidelineBegin(500)
         }
+        return super.onApplyWindowInsets(insets)
+    }
+
+    override fun onAttachedToWindow() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+                Log.d("constraint-debug", "onAttachedToWindow: ${rootWindowInsets?.displayCutout}")
+            }
+        }
+        super.onAttachedToWindow()
     }
 }

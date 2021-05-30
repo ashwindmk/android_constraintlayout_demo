@@ -1,82 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.fragment.app.FragmentContainerView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DynamicActivity">
+    android:id="@+id/fragmentContainer"
+    android:background="@color/white" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/topGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="40dp" />
+<!--<com.ashwin.android.constraintlayoutdemo.CustomLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:id="@+id/root_layout"-->
+<!--    android:background="@color/gray" />-->
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottomGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="40dp" />
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/root_layout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/gray"-->
+<!--    tools:context=".DynamicActivity"-->
+<!--    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"-->
+<!--    android:fitsSystemWindows="true">-->
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/startGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="40dp" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/topGuideline"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="40dp" />-->
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/endGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="40dp" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/bottomGuideline"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_end="40dp" />-->
 
-    <TextView
-        android:id="@+id/one_textview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/endGuideline"
-        app:layout_constraintStart_toEndOf="@+id/startGuideline"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="One TextView" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/startGuideline"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_begin="40dp" />-->
 
-    <TextView
-        android:id="@+id/two_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/endGuideline"
-        app:layout_constraintStart_toEndOf="@+id/startGuideline"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Two TextView" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/endGuideline"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_end="40dp" />-->
 
-    <TextView
-        android:id="@+id/three_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/endGuideline"
-        app:layout_constraintStart_toEndOf="@+id/startGuideline"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Three TextView" />
+<!--    <TextView-->
+<!--        android:id="@+id/one_textview"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorAccent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/endGuideline"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/startGuideline"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:text="One TextView" />-->
 
-    <ImageView
-        android:id="@+id/swipe_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:elevation="4dp"
-        android:src="@drawable/ic_swipe"
-        android:fitsSystemWindows="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+<!--    <TextView-->
+<!--        android:id="@+id/two_textview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/endGuideline"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/startGuideline"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:text="Two TextView" />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <TextView-->
+<!--        android:id="@+id/three_textview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/endGuideline"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/startGuideline"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:text="Three TextView" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/swipe_icon"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:elevation="4dp"-->
+<!--        android:src="@drawable/ic_swipe"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/topGuideline" />-->
+<!--    &lt;!&ndash;        android:fitsSystemWindows="true"&ndash;&gt;-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
